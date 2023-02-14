@@ -1,6 +1,7 @@
 <label for="">Mida imatge:
   <input type="text" [(ngModel)]="imageSize">
 </label>
+<h1>Pagina {{this.page}} de {{this.totalPages}}</h1>
 <hr>
 <table>
   <tr>
@@ -16,13 +17,13 @@
   </tr>
 </table>
 <label for="">Documents per plana:
-  <input type="text" [(ngModel)]="limit">
+  <input type="text" [(ngModel)]="this.limit">
 </label>
 <label for="">Plana:
-  <input type="text" [(ngModel)]="page">
+  <input type="text" [(ngModel)]="this.page">
 </label>
 <button (click)="getArtworks()">Cerca</button>
-
+<br><br><br><br><br>
 <table>
   <tr>
     <th>Títol</th>
