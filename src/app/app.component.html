@@ -1,4 +1,42 @@
 <label for="">Mida imatge:
   <input type="text" [(ngModel)]="imageSize">
 </label>
-{{imageSize}}
+<hr>
+<table>
+  <tr>
+    <th>Títol</th>
+    <th>id</th>
+    <th>Imatge</th>
+    <th>Visualitzar</th>
+  </tr>
+  <tr *ngFor="let row of this.artworks">
+    <td>{{row[1]}}</td>
+    <td>{{row[0]}}</td>
+    <td><img src={{row[2]}}></td>
+  </tr>
+</table>
+<label for="">Documents per plana:
+  <input type="text" [(ngModel)]="limit">
+</label>
+<label for="">Plana:
+  <input type="text" [(ngModel)]="page">
+</label>
+<button (click)="getArtworks()">Cerca</button>
+
+<table>
+  <tr>
+    <th>Títol</th>
+    <th>Imatge</th>
+    <th>Nom Aritsta</th>
+    <th>Neixement</th>
+    <th>Mort</th>
+  </tr>
+  <tr *ngFor="let row of this.staticArtworks">
+    <td>{{row[1]}}</td>
+    <td><img src={{row[2]}}></td>
+    <td>{{row[3]}}</td>
+    <td>{{row[4]}}</td>
+    <td>{{row[5]}}</td>
+
+  </tr>
+</table>
